@@ -57,7 +57,7 @@ trait HasByname
     public static function bynameSnake($delimiter = '_')
     {
         return Cache::remember('byname.' . static::class . '.bynameSnake', function() use ($delimiter) {
-            return utils::stringToSnake(static::byname(), $delimiter);
+            return Utils::stringToSnake(static::byname(), $delimiter);
         });
     }
 
@@ -67,7 +67,7 @@ trait HasByname
     public static function bynameStudly()
     {
         return Cache::remember('byname.' . static::class . '.bynameStudly', function() {
-            return utils::stringToStudly(static::byname());
+            return Utils::stringToStudly(static::byname());
         });
     }
 
@@ -77,7 +77,7 @@ trait HasByname
     public static function bynameCamel()
     {
         return Cache::remember('byname.' . static::class . '.bynameCamel', function() {
-            return utils::stringToCamel(static::byname());
+            return Utils::stringToCamel(static::byname());
         });
     }
 }
